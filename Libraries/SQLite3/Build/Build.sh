@@ -1,6 +1,8 @@
 #!/bin/bash
 cd sqlite
 ./configure --enable-static --disable-shared --disable-math --disable-json --disable-memsys5 --disable-memsys3 --disable-fts3 --disable-fts4 --disable-fts5 --disable-update-limit --disable-geopoly --disable-rtree --disable-session --disable-gcov --disable-load-extension --disable-readline --disable-editline --disable-tcl --enable-tempstore=no --enable-releasemode --disable-threadsafe --disable-largefile --disable-libtool-lock
+make lemon
+cp src/parse.y .
 ./lemon parse.y \
 -DSQLITE_OMIT_ANALYZE \
 -DSQLITE_OMIT_ATTACH \
